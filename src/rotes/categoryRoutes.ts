@@ -1,7 +1,7 @@
 import { Router } from "express";
 import { createCategoryController } from "../modules/cars/useCases/category/createCategoryUseCase";
-import { findCategoryByIdController } from "../modules/cars/useCases/category/findCategoryById";
-import { findAllCategoriesController } from "../modules/cars/useCases/category/findAllCategories";
+import { findCategoryByIdController } from "../modules/cars/useCases/category/findCategoryByIdUseCase";
+import { findAllCategoriesController } from "../modules/cars/useCases/category/findAllCategoriesUsecase";
 import { updateCategoryController } from "../modules/cars/useCases/category/updateCategoryUseCase";
 import { deleteCategoryController } from "../modules/cars/useCases/category/deleteCategoryUseCase";
 

@@ -1,12 +1,11 @@
-import { appDataSource } from "../../../../../dataSource";
-import { CategoryEntity } from "../../../entities/CategoryEntity";
-import { Categoryrepository } from "../../../repository/category/CategoryRepository";
+import { categoryRepository } from "../../../repository/category";
 import { DeleteCategoryController } from "./DeleteCategoryController";
-import { DeleteCategoryUyseCase } from "./DeleteCategoryUseCase";
+import { DeleteCategoryUseCase } from "./DeleteCategoryUseCase";
 
-const categoryRepository = new Categoryrepository(appDataSource.getRepository(CategoryEntity))
 
-const deleteCategoryUseCase = new DeleteCategoryUyseCase(categoryRepository)
+
+
+const deleteCategoryUseCase = new DeleteCategoryUseCase(categoryRepository)
 
 const deleteCategoryController = new DeleteCategoryController(deleteCategoryUseCase)
 

@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { FindCategoryByIdUseCase } from "./FindCategoryByIdUsecase";
+import { FindCategoryByIdUseCase } from "./FindCategoryByIdUseCase";
 
 export class FindCategoryByIdController {
 

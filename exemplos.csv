@@ -6,3 +6,5 @@ yarn typeorm-ts-node-commonjs migration:generate ./src/database/migrations/creat
 Para rodar uma migration
 
 yarn typeorm-ts-node-commonjs migration:run -d ./src/dataSource.ts
+
+

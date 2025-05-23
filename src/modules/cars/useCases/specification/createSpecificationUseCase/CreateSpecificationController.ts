@@ -1,17 +1,16 @@
 import { Request, Response } from "express";
-import { CreateCategoryUseCase } from "./CreateCategoryUseCase";
+import { CreateSpecificationUseCase } from "./CreateSpecificationUseCase";
 
-export class CreateCategoryController {
+export class CreateSpecificationController {
 
-    constructor(private createCategoryUseCase: CreateCategoryUseCase) { }
+    constructor(private createSpecificationUseCase: CreateSpecificationUseCase) { }
 
     async handle(request: Request, response: Response) {
 
         const { name, description } = request.body
 
         try {
-            const result = await this.createCategoryUseCase.execute({ name, description })
-
+            const result = await this.createSpecificationUseCase.execute({ name, description })
             return response.status(200).json(result)
         } catch (error) {
             if (error instanceof Error) {
@@ -19,6 +18,8 @@ export class CreateCategoryController {
             }
 
             console.log(`Internal error ${error}`)
+
         }
     }
+
 }

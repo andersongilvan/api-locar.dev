@@ -1,6 +1,6 @@
 import { ICategoryRepository } from "../../../repository/category/ICategoryRepository";
 
-export class DeleteCategoryUyseCase {
+export class DeleteCategoryUseCase {
 
     constructor(private categoryRepository: ICategoryRepository) { }
 

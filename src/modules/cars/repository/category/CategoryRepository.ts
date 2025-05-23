@@ -1,10 +1,10 @@
 import { UpdateResult, DeleteResult, Repository } from "typeorm";
 import { CreateCategoryDto } from "../../DTOs/category/CreateCategoryDto";
-import { UpdateCateforyDto } from "../../DTOs/category/UpdateCategoryDto";
 import { CategoryEntity } from "../../entities/CategoryEntity";
 import { ICategoryRepository } from "./ICategoryRepository";
+import { UpdateCategoryDto } from "../../DTOs/category/UpdateCategoryDto";
 
-export class Categoryrepository implements ICategoryRepository {
+export class CategoryRepository implements ICategoryRepository {
 
     constructor(private categoryEntity: Repository<CategoryEntity>) { }
 
@@ -33,7 +33,7 @@ export class Categoryrepository implements ICategoryRepository {
     }
 
 
-    async update({ id, name, description }: UpdateCateforyDto): Promise<UpdateResult> {
+    async update({ id, name, description }: UpdateCategoryDto): Promise<UpdateResult> {
         const result = await this.categoryEntity.update({ id }, { name, description })
         if (result.affected === 0) {
             return null

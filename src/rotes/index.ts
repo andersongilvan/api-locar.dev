@@ -1,5 +1,6 @@
 import express, { Express } from "express";
 import { categoryRoute } from "./categoryRoutes";
+import { specificationRoute } from "./specificationsRoutes";
 
 export function routes(app: Express) {
     app.use(express.json())
@@ -8,4 +9,5 @@ export function routes(app: Express) {
     })
 
     app.use("/categories", categoryRoute)
+    app.use("/specifications", specificationRoute)
 }

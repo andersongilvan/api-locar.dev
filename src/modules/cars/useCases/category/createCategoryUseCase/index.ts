@@ -1,13 +1,12 @@
-import { appDataSource } from "../../../../../dataSource";
-import { CategoryEntity } from "../../../entities/CategoryEntity";
-import { Categoryrepository } from "../../../repository/category/CategoryRepository";
-import { CreateCategroyController } from "./CreateCategoryController";
+
+import { categoryRepository } from "../../../repository/category";
+import { CreateCategoryController } from "./CreateCategoryController";
 import { CreateCategoryUseCase } from "./CreateCategoryUseCase";
 
-const categoryRepository = new Categoryrepository(appDataSource.getRepository(CategoryEntity))
+
 
 const createCategoryUseCase = new CreateCategoryUseCase(categoryRepository)
 
-const createCategoryController = new CreateCategroyController(createCategoryUseCase)
+const createCategoryController = new CreateCategoryController(createCategoryUseCase)
 
 export { createCategoryController }
