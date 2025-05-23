@@ -1,0 +1,25 @@
+{
+  "name": "api-locar.dev",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
+    "migration:generate1": "typeorm-ts-node-commonjs migration:generate ./src/database migrations/default -d ./src/dataSource.ts",
+    "migration:run": "typeorm-ts-node-commonjs -d ./src/dataSource.ts migration:run",
+    "migration:generate": "typeorm-ts-node-commonjs migration:generate"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.2",
+    "@types/node": "^22.15.21",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "reflect-metadata": "^0.2.2",
+    "sqlite3": "^5.1.7",
+    "typeorm": "^0.3.24"
+  }
+}

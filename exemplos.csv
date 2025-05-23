@@ -1,0 +1,8 @@
+Para criar uma migration
+
+yarn typeorm-ts-node-commonjs migration:generate ./src/database/migrations/create-table-tb_categories -d ./src/dataSource.ts
+
+
+Para rodar uma migration
+
+yarn typeorm-ts-node-commonjs migration:run -d ./src/dataSource.ts
