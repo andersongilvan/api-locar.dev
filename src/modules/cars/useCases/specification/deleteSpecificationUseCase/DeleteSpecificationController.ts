@@ -1,17 +1,17 @@
 import { Request, Response } from "express";
-import { DeleteCategoryUseCase } from "./DeleteCategoryUseCase";
+import { DeleteSpecificationUseCase } from "./DeleteSpecificationUseCase";
 
-export class DeleteCategoryController {
+export class DeleteSpecificationController {
 
-    constructor(private deleteCategoryUseCase: DeleteCategoryUseCase) { }
+    constructor(private deleteSpecificationUseCase: DeleteSpecificationUseCase) { }
 
     async handle(request: Request, response: Response) {
 
         const { id } = request.params
 
         try {
-            const result = await this.deleteCategoryUseCase.execute(id)
-            return response.status(200).json({ success : "Category deleted" })
+            const result = await this.deleteSpecificationUseCase.execute(id)
+            return response.status(200).json({ success: "Specification deleted" })
         } catch (error) {
             if (error instanceof Error) {
                 return response.status(400).json({ error: error.message })
@@ -20,5 +20,4 @@ export class DeleteCategoryController {
             console.log(`Internal error ${error}`)
         }
     }
-
 }

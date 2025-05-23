@@ -1,7 +1,7 @@
 import { ListSpecificationDto } from "../../../DTOs/specification/ListSpecificationDto";
 import { ISpecificationRepository } from "../../../repository/specification/ISpecificationRepository";
 
-export class findSpecificationByIdUseCase {
+export class FindSpecificationByIdUseCase {
 
     constructor(private specificationRepository: ISpecificationRepository) { }
 

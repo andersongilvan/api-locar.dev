@@ -1,5 +1,5 @@
 import { ListCategoryDto } from "../../../DTOs/category/ListCategoryDto";
-import { UpdateCateforyDto } from "../../../DTOs/category/UpdateCategoryDto";
+import { UpdateCategoryDto } from "../../../DTOs/category/UpdateCategoryDto";
 import { ICategoryRepository } from "../../../repository/category/ICategoryRepository";
 
 interface IRequest {
@@ -18,7 +18,7 @@ export class UpdateCategoryUseCase {
             throw new Error("Required fields")
         }
 
-        const updateCategoryDto = new UpdateCateforyDto(id, name, description)
+        const updateCategoryDto = new UpdateCategoryDto(id, name, description)
 
         const updatedCategory = await this.categoryRepository.update({
             id: updateCategoryDto.id,
